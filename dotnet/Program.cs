@@ -73,8 +73,8 @@ namespace quickstart
             var pipeline = new BsonDocument[]{
                 new BsonDocument{ {"$group", new BsonDocument{{"_id", BsonNull.Value}, {"total", new BsonDocument{{"$sum", "$i"}}}}} },
             };
-            var documents = collection.Aggregate<BsonDocument>(pipeline).ToList();
-            Console.WriteLine(documents[0].ToJson());
+            documents = collection.Aggregate<BsonDocument>(pipeline).ToList();
+            Console.WriteLine(documents.First().ToJson());
 
             Console.WriteLine("Finished!");
         }
