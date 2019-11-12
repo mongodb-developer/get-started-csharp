@@ -44,6 +44,8 @@ In order to execute the code example, you need to specify `MONGODB_URI` environm
    * `dotnet build`
    * `dotnet run`
 
+### Change driver version from within the Docker environment
+
 For running the code example in a different driver version from the one built on the image:
 
 1. Change the driver version within the project file [quickstart.csproj](dotnet/quickstart.csproj#L7)
@@ -59,12 +61,15 @@ export MONGODB_URI="mongodb+srv://usr:pwd@new.mongodb.net/dbname?retryWrites=tru
 ```
 
 
-## Related information
+## Tutorials
 
 * [Quickstart C# and MongoDB: Starting and Setup](https://www.mongodb.com/blog/post/quick-start-c-sharp-and-mongodb-starting-and-setup)
-* [Quickstart C# and MongoDB: Creating Documents](https://www.mongodb.com/blog/post/quick-start-c-sharp-and-mongodb--creating-documents)
-* [MongoDB .NET/C# driver QuickStart](https://mongodb.github.io/mongo-csharp-driver/2.9/getting_started/quick_tour/)
+* [MongoDB .NET/C# driver: Getting Started](https://mongodb.github.io/mongo-csharp-driver/2.9/getting_started/quick_tour/)
 
 ## Misc
 
 * The use of .Net Core version 2.1+ (with SNI support) is required to connect to MongoDB Atlas shared instances (currently M0/M2/M5).
+
+## About 
+
+This project is part of the MongoDB Quickstart code examples. Please see [quickstart-readme](https://github.com/mongodb-developer/quickstart-readme) for more information. 
