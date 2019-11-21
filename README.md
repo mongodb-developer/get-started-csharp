@@ -1,10 +1,10 @@
-# Quickstart .NET/C#
+# Get-Started .NET/C#
 
 Repository to help getting started with MongoDB .NET/C# driver connecting to MongoDB Atlas.
 
 ## Information
 
-This Quickstart project uses [MongoDB .NET/C# driver](http://mongodb.github.io/mongo-csharp-driver/) version 2.9.2 by default. Although you can change the driver version, the provided code example was only tested against the default version of MongoDB driver. There is no guarantee that the code sample will work for all possible versions of the driver.
+This Get-Started project uses [MongoDB .NET/C# driver](http://mongodb.github.io/mongo-csharp-driver/) version 2.9.2 by default. Although you can change the driver version, the provided code example was only tested against the default version of MongoDB driver. There is no guarantee that the code sample will work for all possible versions of the driver.
 
 ## Pre-requisites 
 
@@ -48,7 +48,7 @@ In order to execute the code example, you need to specify `MONGODB_URI` environm
 
 For running the code example in a different driver version from the one built on the image:
 
-1. Change the driver version within the project file [quickstart.csproj](dotnet/quickstart.csproj#L7)
+1. Change the driver version within the project file [getstarted.csproj](dotnet/getstarted.csproj#L7)
 2. Re-build the sample code:
    ```
    dotnet build
@@ -72,4 +72,4 @@ export MONGODB_URI="mongodb+srv://usr:pwd@new.mongodb.net/dbname?retryWrites=tru
 
 ## About 
 
-This project is part of the MongoDB Quickstart code examples. Please see [quickstart-readme](https://github.com/mongodb-developer/quickstart-readme) for more information. 
+This project is part of the MongoDB Get-Started code examples. Please see [get-started-readme](https://github.com/mongodb-developer/get-started-readme) for more information. 

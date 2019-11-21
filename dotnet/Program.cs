@@ -3,7 +3,7 @@ using System.Linq;
 using MongoDB.Bson;
 using MongoDB.Driver;
 
-namespace quickstart
+namespace getstarted
 {
     class Program
     {
@@ -13,7 +13,7 @@ namespace quickstart
 
             var mongoURL = new MongoUrl(uri);
             var client = new MongoClient(mongoURL);
-            var database = client.GetDatabase("quickstart");            
+            var database = client.GetDatabase("getstarted");            
             var collection = database.GetCollection<BsonDocument>("dotnet");
 
             database.DropCollection("dotnet");

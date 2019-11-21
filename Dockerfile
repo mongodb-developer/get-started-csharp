@@ -34,11 +34,11 @@ ENV MONGODB_URI=${MONGODB_URI}
 
 RUN mkdir -p ${HOME}/dotnet
 COPY dotnet/Program.cs ${HOME}/dotnet/Program.cs
-COPY dotnet/quickstart.csproj ${HOME}/dotnet/quickstart.csproj
+COPY dotnet/getstarted.csproj ${HOME}/dotnet/getstarted.csproj
 
 RUN chown -R ubuntu ${HOME}/dotnet && chmod -R 750 ${HOME}/dotnet
 
-RUN sed -i "s/x.x.x/${DRIVER_VERSION}/g" ${HOME}/dotnet/quickstart.csproj
+RUN sed -i "s/x.x.x/${DRIVER_VERSION}/g" ${HOME}/dotnet/getstarted.csproj
 
 USER ubuntu
 WORKDIR ${HOME}
