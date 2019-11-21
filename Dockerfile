@@ -1,10 +1,11 @@
 FROM ubuntu:18.04
 
-ARG DRIVER_VERSION=2.9.2
+ARG DRIVER_VERSION=2.9.3
 ARG MONGODB_URI
 
 RUN apt-get update && apt-get install -y \
 	nano \
+    vim \
 	sudo \
     curl \
     libcurl4-openssl-dev \
