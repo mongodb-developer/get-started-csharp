@@ -1,6 +1,6 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
-ARG DRIVER_VERSION=2.10.0
+ARG DRIVER_VERSION=2.11.3
 ARG MONGODB_URI
 
 RUN apt-get update && apt-get install -y \
@@ -13,10 +13,10 @@ RUN apt-get update && apt-get install -y \
     gpg-agent
 
 RUN curl -sSL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > /etc/apt/trusted.gpg.d/microsoft.gpg
-RUN echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-bionic-prod bionic main" > /etc/apt/sources.list.d/dotnetdev.list
+RUN echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-focal-prod focal main" > /etc/apt/sources.list.d/dotnetdev.list
 
 RUN apt-get update && apt-get install -y \
-    dotnet-sdk-2.2 && \
+    dotnet-sdk-3.1 && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
