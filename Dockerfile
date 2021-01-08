@@ -1,6 +1,6 @@
 FROM ubuntu:20.04
 
-ARG DRIVER_VERSION=2.11.3
+ARG DRIVER_VERSION=2.11.5
 ARG MONGODB_URI
 
 RUN apt-get update && apt-get install -y \
@@ -29,8 +29,10 @@ RUN export uid=1000 gid=1000 && \
     chown ${uid}:${gid} -R /home/ubuntu
 
 ENV HOME /home/ubuntu
+ENV WORKSPACE /workspace
 ENV DRIVER_VERSION ${DRIVER_VERSION}
 ENV MONGODB_URI=${MONGODB_URI}
+ENV DOTNET_CLI_TELEMETRY_OPTOUT=1
 
 RUN mkdir -p ${HOME}/dotnet
 COPY dotnet/Program.cs ${HOME}/dotnet/Program.cs
@@ -41,6 +43,6 @@ RUN chown -R ubuntu ${HOME}/dotnet && chmod -R 750 ${HOME}/dotnet
 RUN sed -i "s/x.x.x/${DRIVER_VERSION}/g" ${HOME}/dotnet/getstarted.csproj
 
 USER ubuntu
-WORKDIR ${HOME}
+WORKDIR ${HOME}/dotnet
 
-CMD ["/bin/bash"]
+ENTRYPOINT ["/bin/bash", "-c"]
