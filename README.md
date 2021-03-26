@@ -4,7 +4,7 @@ Repository to help getting started with MongoDB .NET/C# driver connecting to Mon
 
 ## Information
 
-This Get-Started project uses [MongoDB .NET/C# driver](http://mongodb.github.io/mongo-csharp-driver/) version 2.11.5 by default. Although you can change the driver version, the provided code example was only tested against the default version of MongoDB driver. There is no guarantee that the code sample will work for all possible versions of the driver.
+This Get-Started project uses [MongoDB .NET/C# driver](http://mongodb.github.io/mongo-csharp-driver/) version 2.12.1 by default. Although you can change the driver version, the provided code example was only tested against the default version of MongoDB driver. There is no guarantee that the code sample will work for all possible versions of the driver.
 
 ## Pre-requisites 
 
@@ -18,67 +18,15 @@ In order to execute the code example, you need to specify `MONGODB_URI` environm
 
 ##  Execution Steps 
 
-1. Build Docker image with a tag name. Within the top level directory execute: 
-   ```
-   docker build . -t start-dotnet
-   ```
-   This will build a docker image with a tag name `start-dotnet`. 
-
-2. Execute the helper shell script followed by the MongoDB URI that you would like to connect to. 
-      ```
-      ./get-started.sh "mongodb+srv://usr:pwd@example.mongodb.net/dbname?retryWrites=true"
-      ```
-
-   To use a different driver version, specify the driver version after the MongoDB URI. For example:
-      ```
-      ./get-started.sh "mongodb+srv://usr:pwd@example.mongodb.net/dbname?retryWrites=true" 2.11.3
-      ```
-
-## Alternative Execution Steps (without helper)
-
-## Build Steps 
-
-1. Build Docker image with a tag name. Within this directory execute: 
-   * To use the default driver version and specify `MONGODB_URI`:
-      ```
-      docker build . -t start-dotnet --build-arg MONGODB_URI="mongodb+srv://usr:pwd@example.mongodb.net/dbname?retryWrites=true"
-      ```
-   * To use a different driver version and specify `MONGODB_URI`. For example:
-      ```
-      docker build . -t start-dotnet --build-arg DRIVER_VERSION=2.10.0 --build-arg MONGODB_URI="mongodb+srv://usr:pwd@example.mongodb.net/dbname?retryWrites=true"
-      ```
-   This will build a docker image with a tag name `start-dotnet`. 
-   As a result of the build, the example code is compiled for the specified driver version and ready to be executed.
-
-2. Run the Docker image by executing:
-   ```
-   docker run --tty --interactive --hostname dotnet start-dotnet bash
-   ```
-
-   The command above will run a `start-dotnet` tagged Docker image. Sets the hostname as `dotnet`. 
-
-## Execution Steps
-
-1. Run the compiled C# code example by following below steps:
-   * `dotnet build`
-   * `dotnet run`
-
-### Change driver version from within the Docker environment
-
-For running the code example in a different driver version from the one built on the image:
-
-1. Change the driver version within the project file [getstarted.csproj](dotnet/getstarted.csproj#L7)
-2. Re-build the sample code:
-   ```
-   dotnet build
-   ```
-
-From within the docker environment, you can also change the `MONGODB_URI` by changing the environment variable: 
-
-```sh
-export MONGODB_URI="mongodb+srv://usr:pwd@new.mongodb.net/dbname?retryWrites=true"
+Execute the helper shell script followed by the MongoDB URI that you would like to connect to. 
+```
+./get-started.sh "mongodb+srv://usr:pwd@example.mongodb.net/dbname?retryWrites=true"
 ```
 
+To use a different driver version, specify the driver version after the MongoDB URI. For example:
+```
+./get-started.sh "mongodb+srv://usr:pwd@example.mongodb.net/dbname?retryWrites=true" 2.11.3
+```
 
 ## Tutorials
 
