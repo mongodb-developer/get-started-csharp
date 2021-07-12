@@ -4,6 +4,6 @@
     <TargetFramework>netcoreapp5.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="MongoDB.Driver" Version="2.12.1" />
+    <PackageReference Include="MongoDB.Driver" Version="2.12.4" />
   </ItemGroup> 
 </Project>
