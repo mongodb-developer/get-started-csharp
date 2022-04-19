@@ -4,7 +4,7 @@ Repository to help getting started with MongoDB .NET/C# driver connecting to Mon
 
 ## Information
 
-This Get-Started project uses [MongoDB .NET/C# driver](http://mongodb.github.io/mongo-csharp-driver/) version 2.12.4 by default. Although you can change the driver version, the provided code example was only tested against the default version of MongoDB driver. There is no guarantee that the code sample will work for all possible versions of the driver.
+This Get-Started project uses [MongoDB .NET/C# driver](http://mongodb.github.io/mongo-csharp-driver/) version 2.15.0 by default. Although you can change the driver version, the provided code example was only tested against the default version of MongoDB driver. There is no guarantee that the code sample will work for all possible versions of the driver.
 
 ## Pre-requisites 
 
@@ -25,7 +25,7 @@ Execute the helper shell script followed by the MongoDB URI that you would like 
 
 To use a different driver version, specify the driver version after the MongoDB URI. For example:
 ```
-./get-started.sh "mongodb+srv://usr:pwd@example.mongodb.net/dbname?retryWrites=true" 2.11.3
+./get-started.sh "mongodb+srv://usr:pwd@example.mongodb.net/dbname?retryWrites=true" 2.12.4
 ```
 
 ## Tutorials
