@@ -13,9 +13,9 @@ namespace getstarted
 
             var mongoURL = new MongoUrl(uri);
             var client = new MongoClient(mongoURL);
-            var database = client.GetDatabase("getstarted");            
+            var database = client.GetDatabase("getstarted");
             var collection = database.GetCollection<BsonDocument>("dotnet");
-            
+
             Console.WriteLine("Resetting collection");
             database.DropCollection("dotnet");
 
@@ -31,31 +31,31 @@ namespace getstarted
                     }}
             };
 
-            // Insert one document 
+            // Insert one document
             collection.InsertOne(document);
             Console.WriteLine("Inserted one document");
 
             document = collection.Find(new BsonDocument()).FirstOrDefault();
             Console.WriteLine("Found one document from query:");
             Console.WriteLine("\t{0}", document.ToString());
-            
+
             // Generate 100 documents with a counter ranging from 0 - 99 and insert
-            var documents = Enumerable.Range(0, 100).Select(i => new BsonDocument("i", i));           
+            var documents = Enumerable.Range(0, 100).Select(i => new BsonDocument("i", i));
             collection.InsertMany(documents);
             Console.WriteLine("Inserted many documents");
 
-            // Count number of documents 
+            // Count number of documents
             var count = collection.CountDocuments(new BsonDocument());
             Console.WriteLine("Number of documents in the collection : {0}", count);
 
-            // Find a document with Sort and Limit 
+            // Find a document with Sort and Limit
             var filter = Builders<BsonDocument>.Filter.Exists("i");
             var sort = Builders<BsonDocument>.Sort.Descending("i");
             document = collection.Find(filter).Sort(sort).First();
             Console.WriteLine("Found a document with Sort():");
             Console.WriteLine("\t{0}", document);
 
-            // Find a document with Projection and Limit 
+            // Find a document with Projection and Limit
             var projection = Builders<BsonDocument>.Projection.Exclude("_id");
             document = collection.Find(new BsonDocument()).Project(projection).First();
             Console.WriteLine(document.ToString());
@@ -68,7 +68,7 @@ namespace getstarted
             var result = collection.UpdateOne(filter, update);
 
             if (result.IsModifiedCountAvailable)
-            {   
+            {
                 Console.WriteLine("Number of document updated: ");
                 Console.WriteLine("\t{0}", result.ModifiedCount);
             }
